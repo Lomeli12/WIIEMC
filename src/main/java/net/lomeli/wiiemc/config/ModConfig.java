@@ -14,7 +14,7 @@ import net.lomeli.wiiemc.WIIEMC;
 public class ModConfig {
     public static boolean showEMC = true;
     public static boolean showNoEMC = false;
-    public static boolean showIsLearned = true;
+    public static boolean showIsLearned = false;
     public static boolean showCanLearn = true;
     public static boolean showCantLearn = false;
     public static boolean showTabletEMC = true;
@@ -33,7 +33,7 @@ public class ModConfig {
         String cat = Configuration.CATEGORY_GENERAL;
         showEMC = config.getBoolean("showEMC", cat, true, StatCollector.translateToLocal(ModLang.SHOW_EMC));
         showNoEMC = config.getBoolean("showNoEMC", cat, false, StatCollector.translateToLocal(ModLang.SHOW_NO_EMC));
-        showIsLearned = config.getBoolean("showLearned", cat, true, StatCollector.translateToLocal(ModLang.SHOW_LEARNED));
+        showIsLearned = config.getBoolean("showLearned", cat, false, StatCollector.translateToLocal(ModLang.SHOW_LEARNED));
         showCanLearn = config.getBoolean("showCanLearn", cat, true, StatCollector.translateToLocal(ModLang.SHOW_CAN_LEARN));
         showCantLearn = config.getBoolean("showCantLearn", cat, false, StatCollector.translateToLocal(ModLang.SHOW_CAN_NOT_LEARN));
         showItemFrameEMC = config.getBoolean("showItemFrameEMC", cat, true, StatCollector.translateToLocal(ModLang.SHOW_ITEMFRAME_EMC));
