@@ -113,13 +113,5 @@ public class EntityEMCDataProvider implements IWailaEntityProvider {
 
     public static void callbackRegister(IWailaRegistrar registrar) {
         registrar.registerBodyProvider(new EntityEMCDataProvider(), Entity.class);
-        /*registrar.registerBodyProvider(new EMCDataProvider(), EntityPainting.class);
-        registrar.registerBodyProvider(new EMCDataProvider(), EntityItemFrame.class);
-        registrar.registerBodyProvider(new EMCDataProvider(), EntityMinecart.class);
-        registrar.registerBodyProvider(new EMCDataProvider(), EntityMinecartChest.class);
-        registrar.registerBodyProvider(new EMCDataProvider(), EntityMinecartFurnace.class);
-        registrar.registerBodyProvider(new EMCDataProvider(), EntityMinecartTNT.class);
-        registrar.registerBodyProvider(new EMCDataProvider(), EntityMinecartHopper.class);
-        registrar.registerBodyProvider(new EMCDataProvider(), EntityBoat.class);*/
     }
 }

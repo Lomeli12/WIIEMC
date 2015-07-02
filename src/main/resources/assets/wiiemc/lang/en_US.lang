@@ -9,6 +9,7 @@ config.wiiemc.showcondenseremc=Display the Energy Value stored in a Condenser. (
 config.wiiemc.showcondenserrate=Display the rate at which a Condenser consumes items. (Requires Simple Condensers to be installed)
 config.wiiemc.showcondenserredstone=Display the redstone state of a Condenser. (Requires Simple Condensers to be installed)
 config.wiiemc.showitemframeemc=Display the Energy Value of the item stored in an item frame, if it has one.
+config.wiiemc.checkforupdates=Check for updates on Minecraft load.
 
 # Tooltip
 tooltip.wiiemc.energy.value=Energy Value: %s
@@ -23,3 +24,6 @@ tooltip.wiiemc.condenser.tickrate=1 Item Per Stack every %s tick(s).
 tooltip.wiiemc.condenser.redstone.on=Consumes when given a redstone signal.
 tooltip.wiiemc.condenser.redstone.off=Consumes when NOT given a redstone signal.
 tooltip.wiiemc.condenser.redstone.ignore=Ignores redstone signals.
+
+# Update
+update.wiiemc=§1[WIIEMC] Version %s is available at:§1 %s

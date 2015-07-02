@@ -60,6 +60,10 @@ public class BlockEMCDataProvider implements IWailaDataProvider {
                     item = Items.redstone;
                 else if (block instanceof BlockBush)
                     item = block.getItem(accessor.getWorld(), pos.blockX, pos.blockY, pos.blockZ);
+                else if (block == Blocks.wooden_door)
+                    item = Items.wooden_door;
+                else if (block == Blocks.iron_door)
+                    item = Items.iron_door;
                 else
                     item = Item.getItemFromBlock(block);
 

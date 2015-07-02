@@ -37,4 +37,5 @@ public class ModLang {
     public static final String SHOW_CONDENSER_RATE = CONFIG_BASE + "showcondenserrate";
     public static final String SHOW_CONDENSER_REDSTONE_STATE = CONFIG_BASE + "showcondenserredstone";
     public static final String SHOW_ITEMFRAME_EMC = CONFIG_BASE + "showitemframeemc";
+    public static final String CHECK_FOR_UPDATES = CONFIG_BASE + "checkforupdates";
 }

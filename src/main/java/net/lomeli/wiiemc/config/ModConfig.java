@@ -22,6 +22,7 @@ public class ModConfig {
     public static boolean showCondenserRate = true;
     public static boolean showCondenserRedstoneState = true;
     public static boolean showItemFrameEMC = true;
+    public static boolean checkForUpdates = true;
 
     private Configuration config;
 
@@ -41,6 +42,7 @@ public class ModConfig {
         showCondenserEMC = config.getBoolean("showCondenserEMC", cat, true, StatCollector.translateToLocal(ModLang.SHOW_CONDENSER_EMC));
         showCondenserRate = config.getBoolean("showCondenserRate", cat, true, StatCollector.translateToLocal(ModLang.SHOW_CONDENSER_RATE));
         showCondenserRedstoneState = config.getBoolean("showCondenserRedstoneState", cat, true, StatCollector.translateToLocal(ModLang.SHOW_CONDENSER_REDSTONE_STATE));
+        checkForUpdates = config.getBoolean("checkForUpdates", cat, true, StatCollector.translateToLocal(ModLang.CHECK_FOR_UPDATES));
 
         if (config.hasChanged())
             config.save();
