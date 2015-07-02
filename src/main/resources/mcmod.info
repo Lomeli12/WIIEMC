@@ -1,0 +1,12 @@
+[
+{
+  "modid": "wiiemc",
+  "name": "What Is Its EMC?",
+  "description": "Shows you the EMC of a block and if you can learn it.",
+  "version" : "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://www.lomeli12.net/",
+  "authorList": ["Lomeli12"],
+  "credits": "Lomeli12"
+}
+]

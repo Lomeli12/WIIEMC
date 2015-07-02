@@ -1,0 +1,12 @@
+# Config
+config.wiiemc.showemc=Display a block's Energy Value, if it has one.
+config.wiiemc.shownoemc=Display if a block does NOT have an EMC value.
+config.wiiemc.showcanlearn=Display if a block can be learned or already learned.
+config.wiiemc.showcannotlearn=Display if a block can NOT be learned.
+
+# Tooltip
+tooltip.wiiemc.energy.value=Energy Value: %s
+tooltip.wiiemc.energy.none=Does not have an Energy Value.
+tooltip.wiiemc.knowledge.isknown=Has been learned.
+tooltip.wiiemc.knowledge.isunknown=Can be learned.
+tooltip.wiiemc.knowledge.cantlearn=Can NOT be learned.
