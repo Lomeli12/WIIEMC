@@ -10,7 +10,6 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -23,11 +22,11 @@ import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
 import net.lomeli.wiiemc.ModLang;
+import net.lomeli.wiiemc.WIIEMC;
 import net.lomeli.wiiemc.config.ModConfig;
 
 import com.pahimar.ee3.api.exchange.EnergyValue;
 import com.pahimar.ee3.api.exchange.EnergyValueRegistryProxy;
-import com.pahimar.ee3.api.knowledge.TransmutationKnowledgeRegistryProxy;
 
 public class BlockEMCDataProvider implements IWailaDataProvider {
     private static DecimalFormat energyValueDecimalFormat = new DecimalFormat("###,###,###,###,###.###");
@@ -49,9 +48,8 @@ public class BlockEMCDataProvider implements IWailaDataProvider {
         MovingObjectPosition pos = accessor.getPosition();
         if (block != null) {
             ItemStack stack = new ItemStack(block, 1, meta);
-            EntityPlayer player = accessor.getPlayer();
-            boolean isKnown = TransmutationKnowledgeRegistryProxy.doesPlayerKnow(player, stack);
-            boolean canBeLearned = TransmutationKnowledgeRegistryProxy.canPlayerLearn(player, stack);
+            boolean isKnown = WIIEMC.proxy.doesPlayerKnow(stack);
+            boolean canBeLearned = WIIEMC.proxy.canPlayerLearn(stack);
             EnergyValue value = EnergyValueRegistryProxy.getEnergyValue(stack);
 
             if (value == null) {
@@ -70,8 +68,8 @@ public class BlockEMCDataProvider implements IWailaDataProvider {
                 if (item != null) {
                     stack = new ItemStack(item);
                     value = EnergyValueRegistryProxy.getEnergyValue(stack);
-                    isKnown = TransmutationKnowledgeRegistryProxy.doesPlayerKnow(player, stack);
-                    canBeLearned = TransmutationKnowledgeRegistryProxy.canPlayerLearn(player, stack);
+                    isKnown = WIIEMC.proxy.doesPlayerKnow(stack);
+                    canBeLearned = WIIEMC.proxy.canPlayerLearn(stack);
                 }
             }
             if (value != null && value.getValue() > 0f) {

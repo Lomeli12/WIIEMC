@@ -1,8 +1,10 @@
-package net.lomeli.wiiemc;
+package net.lomeli.wiiemc.core.helper;
 
 import org.apache.logging.log4j.Level;
 
 import cpw.mods.fml.common.FMLLog;
+
+import net.lomeli.wiiemc.WIIEMC;
 
 public class Logger {
 

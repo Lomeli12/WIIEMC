@@ -18,7 +18,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import net.lomeli.wiiemc.Logger;
+import net.lomeli.wiiemc.core.helper.Logger;
 
 import static cpw.mods.fml.relauncher.Side.CLIENT;
 
@@ -61,7 +61,7 @@ public class VersionChecker {
                             this.needsUpdate = false;
                         else {
                             if (this.mod_minor >= update.getMinor())
-                               this.needsUpdate = this.mod_major < update.getMajor();
+                                this.needsUpdate = this.mod_major < update.getMajor();
                         }
                     } else
                         this.needsUpdate = this.mod_major < update.getMajor();

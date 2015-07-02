@@ -19,11 +19,11 @@ import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
 import net.lomeli.wiiemc.ModLang;
+import net.lomeli.wiiemc.WIIEMC;
 import net.lomeli.wiiemc.config.ModConfig;
 
 import com.pahimar.ee3.api.exchange.EnergyValue;
 import com.pahimar.ee3.api.exchange.EnergyValueRegistryProxy;
-import com.pahimar.ee3.api.knowledge.TransmutationKnowledgeRegistryProxy;
 
 public class EntityEMCDataProvider implements IWailaEntityProvider {
     private static DecimalFormat energyValueDecimalFormat = new DecimalFormat("###,###,###,###,###.###");
@@ -41,7 +41,7 @@ public class EntityEMCDataProvider implements IWailaEntityProvider {
     @Override
     public List<String> getWailaBody(Entity entity, List<String> tooltip, IWailaEntityAccessor accessor, IWailaConfigHandler config) {
         EntityPlayer player = accessor.getPlayer();
-        if (entity != null) {
+        if (entity != null && player != null) {
             EnergyValue entityValue = null;
             EnergyValue itemEnergy = null;
             ItemStack entityItem = null;
@@ -69,8 +69,8 @@ public class EntityEMCDataProvider implements IWailaEntityProvider {
                 entityValue = EnergyValueRegistryProxy.getEnergyValue(entityItem = new ItemStack(Items.boat));
 
             if (entityItem != null) {
-                boolean isKnown = TransmutationKnowledgeRegistryProxy.doesPlayerKnow(player, entityItem);
-                boolean canBeLearned = TransmutationKnowledgeRegistryProxy.canPlayerLearn(player, entityItem);
+                boolean isKnown = WIIEMC.proxy.doesPlayerKnow(entityItem);
+                boolean canBeLearned = WIIEMC.proxy.canPlayerLearn(entityItem);
                 if (entityValue != null && entityValue.getValue() > 0f) {
                     if (ModConfig.showEMC) {
                         String tip = StatCollector.translateToLocal(ModLang.ENERGY_VALUE);

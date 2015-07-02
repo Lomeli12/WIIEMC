@@ -20,8 +20,8 @@ import cpw.mods.fml.common.Loader;
 import net.lomeli.simplecondenser.lib.enums.RedstoneState;
 import net.lomeli.simplecondenser.tile.TileCondenserBase;
 import net.lomeli.wiiemc.ModLang;
-import net.lomeli.wiiemc.ObfUtil;
 import net.lomeli.wiiemc.config.ModConfig;
+import net.lomeli.wiiemc.core.helper.ObfUtil;
 
 import com.pahimar.ee3.api.exchange.EnergyValue;
 

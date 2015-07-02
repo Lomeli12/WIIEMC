@@ -1,4 +1,4 @@
-package net.lomeli.wiiemc;
+package net.lomeli.wiiemc.core.helper;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

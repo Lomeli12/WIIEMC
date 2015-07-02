@@ -17,7 +17,7 @@ public class ModLang {
     public static final String IS_KNOWN = KNOWLEDGE_BASE + "isknown";
     public static final String UNKNOWN = KNOWLEDGE_BASE + "isunknown";
     public static final String NOT_LEARNABLE = KNOWLEDGE_BASE + "cantlearn";
-    
+
     // Condenser
     private static final String CONDENSER_BASE = TOOLTIP_BASE + "condenser.";
     public static final String CONDENSER_RATE = CONDENSER_BASE + "tickrate";
