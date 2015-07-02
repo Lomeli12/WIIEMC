@@ -1,7 +1,11 @@
 package net.lomeli.wiiemc;
 
+import org.apache.logging.log4j.Level;
+
 import net.minecraftforge.common.config.Configuration;
 
+import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLInterModComms;
@@ -30,6 +34,11 @@ public class WIIEMC {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         config.initEvent();
-        FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.EMCDataProvider.callbackRegister");
+        FMLLog.log(MOD_ID.toUpperCase(), Level.INFO, "Beware the flower pots...they will confuse you and ambush you...");
+        FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.BlockEMCDataProvider.callbackRegister");
+        FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.EntityEMCDataProvider.callbackRegister");
+        FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.TileEMCDataProvider.callbackRegister");
+        if (Loader.isModLoaded("simplecondenser"))
+            FMLLog.log(MOD_ID.toUpperCase(), Level.INFO, "Aww...I feel all special now...");
     }
 }
