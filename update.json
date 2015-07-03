@@ -1,10 +1,10 @@
 {
     "major" : 1,
     "minor" : 0,
-    "revision" : 0,
-    "downloadURL" : "",
+    "revision" : 1,
+    "downloadURL" : "http://minecraft.curseforge.com/mc-mods/232271-what-is-its-emc/files/2245296",
     "direct" : false,
     "changeLog" : [
-        ""
+        "Fixes everything be unknown on servers. Mod is required on server side to update the client when the player learns a new item."
     ]
 }
