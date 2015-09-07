@@ -16,7 +16,7 @@ import net.lomeli.wiiemc.version.VersionChecker;
 public class WIIEMC {
     public static final String MOD_ID = "wiiemc";
     public static final String MOD_NAME = "What Is Its EMC?";
-    public static final int MAJOR = 1, MINOR = 0, REV = 1;
+    public static final int MAJOR = 1, MINOR = 1, REV = 0;
     public static final String VERSION = MAJOR + "." + MINOR + "." + REV;
     public static final String DEPENDENCIES = "required-after:Waila;required-after:EE3;after:simplecondenser;after:VersionChecker";
     public static final String FACTORY = "net.lomeli.wiiemc.config.ConfigFactory";

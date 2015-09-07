@@ -35,13 +35,22 @@ public class Proxy {
         WIIEMC.config.initEvent();
 
         Logger.logInfo("Beware the flower pots...they will confuse you and ambush you...");
-        FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.BlockEMCDataProvider.callbackRegister");
-        FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.EntityEMCDataProvider.callbackRegister");
-        FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.TileEMCDataProvider.callbackRegister");
+        if (Loader.isModLoaded("EE3")) {
+            FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.ee3.BlockEMCDataProvider.callbackRegister");
+            FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.ee3.EntityEMCDataProvider.callbackRegister");
+            FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.ee3.TileEMCDataProvider.callbackRegister");
+            MinecraftForge.EVENT_BUS.register(new EventHandler());
+        }
+        if (Loader.isModLoaded("ProjectE")) {
+            FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.projecte.BlockEMCDataProvider.callbackRegister");
+            FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.projecte.EntityEMCDataProvider.callbackRegister");
+            FMLInterModComms.sendMessage("Waila", "register", "net.lomeli.wiiemc.providers.projecte.TileEMCDataProvider.callbackRegister");
+        }
         if (Loader.isModLoaded("simplecondenser"))
             Logger.logInfo("Aww...I feel all special now...");
 
-        MinecraftForge.EVENT_BUS.register(new EventHandler());
+        if (Loader.isModLoaded("EE3") && Loader.isModLoaded("ProjectE"))
+            Logger.logError("Greedy little fella, aren't ya?");
     }
 
     public boolean doesPlayerKnow(ItemStack stack) {

@@ -1,4 +1,4 @@
-package net.lomeli.wiiemc.providers;
+package net.lomeli.wiiemc.providers.ee3;
 
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaEntityAccessor;
@@ -40,6 +40,8 @@ public class EntityEMCDataProvider implements IWailaEntityProvider {
 
     @Override
     public List<String> getWailaBody(Entity entity, List<String> tooltip, IWailaEntityAccessor accessor, IWailaConfigHandler config) {
+        if (!ModConfig.ee3Entity)
+            return tooltip;
         EntityPlayer player = accessor.getPlayer();
         if (entity != null && player != null) {
             EnergyValue entityValue = null;
@@ -73,18 +75,18 @@ public class EntityEMCDataProvider implements IWailaEntityProvider {
                 boolean canBeLearned = WIIEMC.proxy.canPlayerLearn(entityItem);
                 if (entityValue != null && entityValue.getValue() > 0f) {
                     if (ModConfig.showEMC) {
-                        String tip = StatCollector.translateToLocal(ModLang.ENERGY_VALUE);
+                        String tip = StatCollector.translateToLocal(ModLang.ENERGY_VALUE_EE3);
                         String energy = energyValueDecimalFormat.format(entityValue.getValue());
                         tooltip.add(String.format(tip, energy));
                     }
                     if (itemEnergy != null && ModConfig.showItemFrameEMC) {
-                        String itemTip = StatCollector.translateToLocal(ModLang.ITEMFRAME_ITEM_ENERGY);
+                        String itemTip = StatCollector.translateToLocal(ModLang.ITEMFRAME_ITEM_ENERGY_EE3);
                         String itemValue = energyValueDecimalFormat.format(itemEnergy.getValue());
                         tooltip.add(String.format(itemTip, itemValue));
                     }
                 } else {
                     if (ModConfig.showNoEMC)
-                        tooltip.add(StatCollector.translateToLocal(ModLang.NO_ENERGY));
+                        tooltip.add(StatCollector.translateToLocal(ModLang.NO_ENERGY_EE3));
                 }
 
                 if (canBeLearned) {

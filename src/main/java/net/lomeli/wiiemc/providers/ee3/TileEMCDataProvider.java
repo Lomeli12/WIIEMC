@@ -1,4 +1,4 @@
-package net.lomeli.wiiemc.providers;
+package net.lomeli.wiiemc.providers.ee3;
 
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
@@ -40,12 +40,14 @@ public class TileEMCDataProvider implements IWailaDataProvider {
 
     @Override
     public List<String> getWailaBody(ItemStack itemStack, List<String> tooltip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
+        if (!ModConfig.ee3Tile)
+            return tooltip;
         TileEntity tile = accessor.getTileEntity();
         if (tile != null) {
             if (isTransmutationTablet(tile) && ModConfig.showTabletEMC) {
                 EnergyValue value = getTabletAvailableEnergyValue(tile);
                 if (value != null) {
-                    String text = StatCollector.translateToLocal(ModLang.AVAILABLE_ENERGY);
+                    String text = StatCollector.translateToLocal(ModLang.AVAILABLE_ENERGY_EE3);
                     String emc = energyValueDecimalFormat.format(value.getValue());
                     tooltip.add(String.format(text, emc));
                 }
@@ -53,7 +55,7 @@ public class TileEMCDataProvider implements IWailaDataProvider {
                 TileCondenserBase condenser = (TileCondenserBase) tile;
                 EnergyValue value = condenser.getStoredEnergyValue();
                 if (ModConfig.showCondenserEMC && value != null) {
-                    String text = StatCollector.translateToLocal(ModLang.STORED_ENERGY);
+                    String text = StatCollector.translateToLocal(ModLang.STORED_ENERGY_EE3);
                     String emc = energyValueDecimalFormat.format(value.getValue());
                     tooltip.add(String.format(text, emc));
                 }

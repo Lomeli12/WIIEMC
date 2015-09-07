@@ -1,4 +1,4 @@
-package net.lomeli.wiiemc.providers;
+package net.lomeli.wiiemc.providers.ee3;
 
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
@@ -43,6 +43,8 @@ public class BlockEMCDataProvider implements IWailaDataProvider {
 
     @Override
     public List<String> getWailaBody(ItemStack itemStack, List<String> tooltip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
+        if (!ModConfig.ee3Block)
+            return tooltip;
         Block block = accessor.getBlock();
         int meta = accessor.getMetadata();
         MovingObjectPosition pos = accessor.getPosition();
@@ -74,16 +76,16 @@ public class BlockEMCDataProvider implements IWailaDataProvider {
             }
             if (value != null && value.getValue() > 0f) {
                 if (ModConfig.showEMC) {
-                    String tip = StatCollector.translateToLocal(ModLang.ENERGY_VALUE);
+                    String tip = StatCollector.translateToLocal(ModLang.ENERGY_VALUE_EE3);
                     String energy = energyValueDecimalFormat.format(value.getValue());
                     tooltip.add(String.format(tip, energy));
                 }
             } else {
                 if (ModConfig.showNoEMC)
-                    tooltip.add(StatCollector.translateToLocal(ModLang.NO_ENERGY));
+                    tooltip.add(StatCollector.translateToLocal(ModLang.NO_ENERGY_EE3));
             }
 
-            if (canBeLearned) {
+            if (canBeLearned && value != null) {
                 if (ModConfig.showCanLearn)
                     tooltip.add(StatCollector.translateToLocal(ModLang.UNKNOWN));
             } else {

@@ -1,5 +1,5 @@
 # Config
-config.wiiemc.showemc=Display a block's Energy Value, if it has one.
+config.wiiemc.showemc=Display a block's EMC Value, if it has one.
 config.wiiemc.shownoemc=Display if a block does NOT have an EMC value.
 config.wiiemc.showlearned=Display if a block has been learned.
 config.wiiemc.showcanlearn=Display if a block can be learned.
@@ -10,20 +10,37 @@ config.wiiemc.showcondenserrate=Display the rate at which a Condenser consumes i
 config.wiiemc.showcondenserredstone=Display the redstone state of a Condenser. (Requires Simple Condensers to be installed)
 config.wiiemc.showitemframeemc=Display the Energy Value of the item stored in an item frame, if it has one.
 config.wiiemc.checkforupdates=Check for updates on Minecraft load.
+config.wiiemc.showtileemc=Display the EMC stored in a tile (Requires ProjectE)
 
-# Tooltip
-tooltip.wiiemc.energy.value=Energy Value: %s
-tooltip.wiiemc.energy.none=Does not have an Energy Value.
-tooltip.wiiemc.energy.storedemc=Stored Energy: %s
-tooltip.wiiemc.energy.availableemc=Available Energy: %s
-tooltip.wiiemc.energy.storeditememc=Item Energy Value: %s
-tooltip.wiiemc.knowledge.isknown=Has been learned.
-tooltip.wiiemc.knowledge.isunknown=Can be learned.
-tooltip.wiiemc.knowledge.cantlearn=Can NOT be learned.
+# Mod Config
+config.wiiemc.ee3.block=Show EE3 EMC of blocks.
+config.wiiemc.ee3.tile=Show EE3 EMC of tiles.
+config.wiiemc.ee3.entity=Show EE3 EMC of entities.
+config.wiiemc.projecte.block=Show ProjectE EMC of blocks.
+config.wiiemc.projecte.tile=Show ProjectE EMC of tiles.
+config.wiiemc.projecte.entity=Show ProjectE EMC of entities.
+
+# EE3 Tooltip
+tooltip.wiiemc.ee3.energy.value=Energy Value: %s
+tooltip.wiiemc.ee3.energy.none=Does not have an Energy Value.
+tooltip.wiiemc.ee3.energy.storedemc=Stored Energy: %s
+tooltip.wiiemc.ee3.energy.availableemc=Available Energy: %s
+tooltip.wiiemc.ee3.energy.storeditememc=Item Energy Value: %s
+tooltip.wiiemc.ee3.knowledge.isknown=Has been learned.
+tooltip.wiiemc.ee3.knowledge.isunknown=Can be learned.
+tooltip.wiiemc.ee3.knowledge.cantlearn=Can NOT be learned.
+
+# Simple Condenser Tooltip
 tooltip.wiiemc.condenser.tickrate=1 Item Per Stack every %s tick(s).
 tooltip.wiiemc.condenser.redstone.on=Consumes when given a redstone signal.
 tooltip.wiiemc.condenser.redstone.off=Consumes when NOT given a redstone signal.
 tooltip.wiiemc.condenser.redstone.ignore=Ignores redstone signals.
+
+# ProjectE ToolTips
+tooltip.wiiemc.projecte.energy.value=EMC Value: %s
+tooltip.wiiemc.projecte.energy.none=Does not have an EMC Value.
+tooltip.wiiemc.projecte.energy.storedemc=Stored EMC: %s
+tooltip.wiiemc.projecte.energy.storeditememc=Item EMC Value: %s
 
 # Update
 update.wiiemc=§1[WIIEMC] Version %s is available at:§1 %s
